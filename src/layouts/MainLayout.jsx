@@ -7,7 +7,7 @@ import Footer from '../components/Shared/Footer/Footer';
 
 const MainLayout = () => {
 
-    const {state} = useNavigation();
+    const { state } = useNavigation();
 
     return (
         <div>

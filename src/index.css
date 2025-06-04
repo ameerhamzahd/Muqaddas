@@ -1,0 +1,24 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Linking */
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* Font-initializing */
+* {
+  font-family: "Playfair Display", sans-serif;
+}
+
+.font-roboto {
+  font-family: "Roboto", sans-serif;
+}
+
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: #C6AD8E;
+  --color-secondary: #5F503E;
+  --color-tertiary: #E6D8CA;
+}

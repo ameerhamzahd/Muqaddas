@@ -19,8 +19,8 @@ const Navbar = () => {
 
     return (
         <div>
-            <div className='flex fixed top-0 z-50 justify-center w-full bg-white/30 backdrop-blur-lg shadow-sm'>
-                <nav className="navbar max-w-5xl mx-auto">
+            <div className='flex fixed top-0 z-50 justify-center w-full'>
+                <nav className="navbar max-w-6xl mx-auto bg-white rounded-full my-5 shadow-sm px-5">
                     <div className="navbar-start">
                         <div className="dropdown relative">
                             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -28,7 +28,7 @@ const Navbar = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
                                 </svg>
                             </label>
-                            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[60] p-2 shadow bg-transparent rounded-box w-52 space-y-1 text-secondary">
+                            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[60] p-2 shadow bg-white rounded-box w-52 space-y-1 text-secondary">
                                 {links}
                             </ul>
                         </div>
@@ -53,7 +53,7 @@ const Navbar = () => {
                                         <img src={user?.photoURL || userAvatar} alt="User Avatar" />
                                     </div>
                                 </label>
-                                <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[60] p-2 shadow bg-transparent rounded-box w-52 text-secondary gap-2">
+                                <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[60] p-2 shadow bg-white rounded-box w-52 text-secondary gap-2">
                                     <li><NavLink to="/add-package" className={navLinkStyle}>Add Package</NavLink></li>
                                     <li><NavLink to="/manage-my-packages" className={navLinkStyle}>Manage My Packages</NavLink></li>
                                     <li><Link onClick={handleLogout} className='flex items-center justify-center gap-1'><TbLogout2 size={20} />Logout</Link></li>

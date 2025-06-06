@@ -18,39 +18,41 @@ const CountUpSection = () => {
     }, []);
 
     return (
-        <div className="bg-[#E6D8CA] py-15">
-            <div className="max-w-5xl mx-auto grid md:grid-cols-4 items-center gap-4">
-                {
-                    stats.map((stat, index) => (
-                        <div
-                            key={stat.id}
-                            className="text-center text-secondary flex-1 relative"
-                        >
-                            <h2 className="text-5xl font-bold">
-                                {
-                                    visible && (
-                                        <CountUp
-                                            start={0}
-                                            end={stat.value}
-                                            duration={2.5}
-                                            suffix={stat.suffix}
-                                            decimals={stat.value % 1 !== 0 ? 1 : 0}
-                                            enableScrollSpy
-                                            scrollSpyDelay={100}
-                                        />
-                                    )
-                                }
-                            </h2>
-                            <p className="text-[#6b6b6b] mt-2 text-sm font-semibold">
-                                {stat.label}
-                            </p>
-                            {/* Vertical line divider (except last) */}
-                            {index !== stats.length - 1 && (
-                                <span className="hidden sm:block absolute right-0 top-1/2 transform -translate-y-1/2 h-12 border-r border-primary" />
-                            )}
-                        </div>
-                    ))
-                }
+        <div>
+            <div className="bg-[#E6D8CA] py-15">
+                <div className="max-w-5xl mx-auto grid md:grid-cols-4 items-center gap-4">
+                    {
+                        stats.map((stat, index) => (
+                            <div
+                                key={stat.id}
+                                className="text-center text-secondary flex-1 relative"
+                            >
+                                <h2 className="text-5xl font-bold">
+                                    {
+                                        visible && (
+                                            <CountUp
+                                                start={0}
+                                                end={stat.value}
+                                                duration={2.5}
+                                                suffix={stat.suffix}
+                                                decimals={stat.value % 1 !== 0 ? 1 : 0}
+                                                enableScrollSpy
+                                                scrollSpyDelay={100}
+                                            />
+                                        )
+                                    }
+                                </h2>
+                                <p className="text-[#6b6b6b] mt-2 text-sm font-semibold">
+                                    {stat.label}
+                                </p>
+                                {/* Vertical line divider (except last) */}
+                                {index !== stats.length - 1 && (
+                                    <span className="hidden sm:block absolute right-0 top-1/2 transform -translate-y-1/2 h-12 border-r border-primary" />
+                                )}
+                            </div>
+                        ))
+                    }
+                </div>
             </div>
         </div>
     );

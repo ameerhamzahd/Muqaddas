@@ -2,6 +2,7 @@ import React from 'react';
 import Banner from '../../components/Banner/Banner';
 import AboutMuqaddas from '../../components/Shared/AboutMuqaddas/AboutMuqaddas';
 import CountUp from '../../components/Shared/CountUp/CountUp';
+import PartnershipMarquee from '../../components/Shared/PartnershipMarquee/PartnershipMarquee';
 
 const Home = () => {
     return (
@@ -16,6 +17,10 @@ const Home = () => {
 
             <div>
                 <CountUp></CountUp>
+            </div>
+
+            <div>
+                <PartnershipMarquee></PartnershipMarquee>
             </div>
         </div>
     );

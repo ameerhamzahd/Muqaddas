@@ -69,13 +69,15 @@ const Banner = () => {
                                 </button>
                             </Link>
 
-                            <button
-                                onClick={openModal}
-                                className="btn btn-outline text-white border-white hover:bg-white hover:text-secondary rounded-full flex items-center"
-                            >
-                                <FaPlay className="mr-2" />
-                                Watch Video
-                            </button>
+                            <Link>
+                                <button
+                                    onClick={openModal}
+                                    className="btn btn-outline text-white border-white hover:bg-white hover:text-secondary rounded-full"
+                                >
+                                    <FaPlay className="mr-2" />
+                                    Watch Video
+                                </button>
+                            </Link>
                         </div>
                     </motion.div>
                 </div>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-modal';
 import bannerImage from "../../assets/mosque2.jpg";
 import { FaRegNewspaper, FaArrowRight, FaPlay } from "react-icons/fa";
-import { motion } from "framer-motion";
+import { motion } from "motion/react"
 import kaabaImage from "../../assets/kaaba.jpg"
 import { Link } from 'react-router';
 
@@ -30,7 +30,7 @@ const Banner = () => {
                         transition={{ duration: 0.8 }}
                         className="w-1/2 lg:w-1/3"
                     >
-                        <div className="relative rounded-t-full overflow-hidden bg-[#C6AD8E] pl-4 pb-4 top-0 md:top-5 lg:top-10">
+                        <div className="relative rounded-t-full overflow-hidden bg-[#E6D8CA] pl-4 pb-4 top-0 md:top-5 lg:top-10">
                             <img
                                 src={kaabaImage}
                                 alt="Kaaba"
@@ -47,7 +47,7 @@ const Banner = () => {
                         className="text-white w-full md:w-1/2 text-center md:text-start md:pr-3 lg-pr-0"
                     >
                         <div className="flex items-center gap-2 mb-2 text-lg font-semibold justify-center md:justify-start">
-                            <span className="bg-[#C6AD8E] text-secondary p-2 rounded-full">
+                            <span className="bg-[#E6D8CA] text-secondary p-2 rounded-full">
                                 <FaRegNewspaper />
                             </span>
                             <span>Welcome To Muqaddas</span>

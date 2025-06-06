@@ -43,7 +43,7 @@ const NotFound = () => {
                                 The page you’re looking for doesn’t exist or has been moved. Please check the URL or go back home.
                             </p>
                             <Link to="/">
-                                <button className="btn btn-outline text-white border-white hover:bg-white hover:text-[#5F503E] rounded-full font-roboto">
+                                <button className="btn btn-outline text-white border-white hover:bg-white hover:text-[#5F503E] rounded-full">
                                     <FaHome className="mr-2" />
                                     Back Home
                                 </button>

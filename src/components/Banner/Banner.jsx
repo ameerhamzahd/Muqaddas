@@ -22,7 +22,7 @@ const Banner = () => {
                     style={{ backgroundImage: `url(${bannerImage})` }}
                 ></div>
 
-                <div className="relative flex flex-col md:flex-row items-center justify-center md:justify-between gap-10 pt-30 pb-15 md:pb-0 max-w-5xl mx-auto">
+                <div className="relative flex flex-col md:flex-row items-center justify-center md:justify-between gap-10 pt-30 pb-15 md:pb-0 max-w-5xl mx-auto px-3 lg:px-0">
                     {/* Left Image */}
                     <motion.div
                         initial={{ opacity: 0, x: -40 }}
@@ -44,7 +44,7 @@ const Banner = () => {
                         initial={{ opacity: 0, x: 40 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 1 }}
-                        className="text-white w-full md:w-1/2 text-center md:text-start md:pr-3 lg-pr-0"
+                        className="text-white w-full md:w-1/2 text-center md:text-start"
                     >
                         <div className="flex items-center gap-2 mb-2 text-lg font-semibold justify-center md:justify-start">
                             <span className="bg-[#E6D8CA] text-secondary p-2 rounded-full">

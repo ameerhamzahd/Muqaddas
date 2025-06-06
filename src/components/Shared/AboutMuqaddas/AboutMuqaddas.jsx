@@ -7,7 +7,7 @@ import dealBg from "../../../assets/mosque3.jpg";
 const AboutMuqaddas = () => {
     return (
         <div className='px-5 lg:px-0'>
-            <div className="max-w-5xl mx-auto my-30 rounded-4xl overflow-hidden grid md:grid-cols-3 shadow-md">
+            <div className="max-w-5xl mx-auto my-15 rounded-4xl overflow-hidden grid md:grid-cols-3 shadow-md">
                 {/* Left Section with motion */}
                 <motion.div
                     initial={{ opacity: 0, x: -40 }}

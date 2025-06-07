@@ -1,6 +1,5 @@
 import React from 'react';
 import error from "../../assets/404.png";
-import notFoundBG from "../../assets/mosque1.jpg"
 import { FaHome } from "react-icons/fa";
 import { motion } from "motion/react";
 import { Link } from "react-router";
@@ -9,8 +8,7 @@ import { GiCamel } from "react-icons/gi";
 const NotFound = () => {
     return (
         <div>
-            <div className="hero min-h-screen" style={{ backgroundImage: `url(${notFoundBG})` }}>
-
+            <div className="hero min-h-screen" style={{ backgroundImage: `url(https://res.cloudinary.com/dgt4ygjhp/image/upload/v1749310364/mosque1_k5fr5c.jpg)` }}>
                 <div className="absolute inset-0 bg-secondary opacity-60"></div>
 
                 <div className="relative z-10 text-white flex flex-col md:flex-row items-center justify-center gap-8 px-4">

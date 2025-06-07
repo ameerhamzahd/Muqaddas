@@ -7,17 +7,17 @@ const teamMembers = [
     {
         name: "Khalid Al Mansoori",
         role: "Operations Manager",
-        img: "https://res.cloudinary.com/dgt4ygjhp/image/upload/v1749305235/team1_iholp7.jpg",
+        img: "https://res.cloudinary.com/dgt4ygjhp/image/upload/v1749309729/team3_glyu2r.jpg",
     },
     {
         name: "Amina Yousuf",
         role: "Technical Lead",
-        img: "https://res.cloudinary.com/dgt4ygjhp/image/upload/v1749305235/team6_lyafys.jpg", // Replace with your image
+        img: "https://res.cloudinary.com/dgt4ygjhp/image/upload/v1749305235/team6_lyafys.jpg",
     },
     {
         name: "Omar Al Farsi",
         role: "Marketing Head",
-        img: "https://res.cloudinary.com/dgt4ygjhp/image/upload/v1749305235/team3_dtxwsz.jpg",
+        img: "https://res.cloudinary.com/dgt4ygjhp/image/upload/v1749305235/team1_iholp7.jpg",
     },
     {
         name: "Fatima Zahra",

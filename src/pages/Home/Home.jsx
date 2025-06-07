@@ -2,7 +2,7 @@ import React from 'react';
 import Banner from '../../components/Banner/Banner';
 import AboutMuqaddas from '../../components/Shared/AboutMuqaddas/AboutMuqaddas';
 import CountUp from '../../components/Shared/CountUp/CountUp';
-import PartnershipMarquee from '../../components/Shared/PartnershipMarquee/PartnershipMarquee';
+import ArticleANDBlog from '../../components/ArticleANDBlog/ArticleANDBlog';
 
 const Home = () => {
     return (
@@ -20,7 +20,7 @@ const Home = () => {
             </div>
 
             <div>
-                <PartnershipMarquee></PartnershipMarquee>
+                <ArticleANDBlog></ArticleANDBlog>
             </div>
         </div>
     );

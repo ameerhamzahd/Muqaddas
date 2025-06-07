@@ -1,8 +1,10 @@
 import React from 'react';
 import { FaUserTie, FaPassport, FaTools } from "react-icons/fa";
+import { PiAirplaneTiltFill } from "react-icons/pi";
+import { MdLuggage } from "react-icons/md";
+import { FaHotel } from "react-icons/fa6";
+import { FaHeadset } from "react-icons/fa";
 import { motion } from "motion/react"
-import mosqueImage from "../../../assets/mosque5.jpg";
-import dealBg from "../../../assets/mosque3.jpg";
 
 const AboutMuqaddas = () => {
     return (
@@ -38,9 +40,9 @@ const AboutMuqaddas = () => {
                         {/* Left Box with background image */}
                         <div
                             className="relative bg-cover bg-center rounded-2xl p-6 w-full text-white opacity-75"
-                            style={{ backgroundImage: `url(${dealBg})` }}
+                            style={{ backgroundImage: `url(https://res.cloudinary.com/dgt4ygjhp/image/upload/v1749286871/mosque3_ohzyhr.jpg)` }}
                         >
-                            <div className="absolute -top-5 left-5 bg-primary p-3 rounded-full text-white text-lg shadow-md">
+                            <div className="absolute -top-5 left-5 bg-primary p-3 rounded-t-full  text-white text-lg shadow-md">
                                 <FaPassport />
                             </div>
                             <h3 className="font-bold text-lg mt-5">Exclusive Deals</h3>
@@ -51,12 +53,47 @@ const AboutMuqaddas = () => {
 
                         {/* Right Box */}
                         <div className="relative bg-[#f9f1e7] border-r-6 border-b-6 border-primary rounded-2xl p-6 w-full text-secondary shadow-md">
-                            <div className="absolute -top-5 left-5 bg-secondary p-3 rounded-full text-white text-lg shadow-md">
-                                <FaTools />
+                            <div className="absolute -top-5 left-5 bg-secondary p-3 rounded-t-full text-white text-lg shadow-md">
+                            <PiAirplaneTiltFill />
                             </div>
                             <h3 className="font-bold text-lg mt-5">Travel Officially</h3>
                             <p className="text-sm mt-2 font-roboto">
                             Your Trusted Partner in Licensed Pilgrimage Travel
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-5 pt-5">
+                    <div className="relative bg-[#f9f1e7] border-r-6 border-b-6 border-primary rounded-2xl p-6 w-full text-secondary shadow-md">
+                            <div className="absolute -top-5 left-5 bg-secondary p-3 rounded-t-full text-white text-lg shadow-md">
+                            <FaHeadset />
+                            </div>
+                            <h3 className="font-bold text-lg mt-5">24/7 Support</h3>
+                            <p className="text-sm mt-2 font-roboto">
+                            Your Trusted Partner in Licensed Pilgrimage Travel
+                            </p>
+                        </div>
+
+                        <div className="relative bg-[#f9f1e7] border-r-6 border-b-6 border-primary rounded-2xl p-6 w-full text-secondary shadow-md">
+                            <div className="absolute -top-5 left-5 bg-secondary p-3 rounded-t-full  text-white text-lg shadow-md">
+                            <FaHotel />
+                            </div>
+                            <h3 className="font-bold text-lg mt-5">5 Star Hotel</h3>
+                            <p className="text-sm mt-2 font-roboto">
+                            Your Trusted Partner in Licensed Pilgrimage Travel
+                            </p>
+                        </div>
+
+                        <div
+                            className="relative bg-cover bg-center rounded-2xl p-6 w-full text-white opacity-75"
+                            style={{ backgroundImage: `url(https://res.cloudinary.com/dgt4ygjhp/image/upload/v1749286871/mosque3_ohzyhr.jpg)` }}
+                        >
+                            <div className="absolute -top-5 left-5 bg-primary p-3 rounded-t-full  text-white text-lg shadow-md">
+                            <MdLuggage />
+                            </div>
+                            <h3 className="font-bold text-lg mt-5">Free Luggage</h3>
+                            <p className="text-sm mt-2 font-roboto">
+                            Experience More, Spend Less on Your Pilgrimage
                             </p>
                         </div>
                     </div>
@@ -70,7 +107,7 @@ const AboutMuqaddas = () => {
                     className="md:col-span-1"
                 >
                     <img
-                        src={mosqueImage}
+                        src="https://res.cloudinary.com/dgt4ygjhp/image/upload/v1749286872/mosque5_yyvfqv.jpg"
                         alt="Masjid Al-Haram"
                         className="w-full h-full object-cover "
                     />

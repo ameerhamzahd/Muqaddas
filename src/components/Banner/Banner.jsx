@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
-import bannerImage from "../../assets/mosque2.jpg";
 import { FaRegNewspaper, FaArrowRight, FaPlay } from "react-icons/fa";
 import { motion } from "motion/react"
-import kaabaImage from "../../assets/kaaba.jpg"
 import { Link } from 'react-router';
 
 Modal.setAppElement('#root'); // required for screen readers
@@ -19,7 +17,7 @@ const Banner = () => {
             <div className="relative w-full bg-secondary">
                 <div
                     className="absolute inset-0 bg-cover bg-center opacity-30"
-                    style={{ backgroundImage: `url(${bannerImage})` }}
+                    style={{ backgroundImage: `url(https://res.cloudinary.com/dgt4ygjhp/image/upload/v1749286803/mosque2_dln4zl.jpg)` }}
                 ></div>
 
                 <div className="relative flex flex-col md:flex-row items-center justify-center md:justify-between gap-10 pt-30 pb-15 md:pb-0 max-w-5xl mx-auto px-3 lg:px-0">
@@ -32,7 +30,7 @@ const Banner = () => {
                     >
                         <div className="relative rounded-t-full overflow-hidden bg-[#E6D8CA] pl-4 pb-4 top-0 md:top-5 lg:top-10">
                             <img
-                                src={kaabaImage}
+                                src="https://res.cloudinary.com/dgt4ygjhp/image/upload/v1749286717/kaaba_o2hnh3.jpg"
                                 alt="Kaaba"
                                 className="rounded-t-full object-cover"
                             />

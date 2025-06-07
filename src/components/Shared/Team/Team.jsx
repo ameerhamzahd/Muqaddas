@@ -98,11 +98,12 @@ const Team = () => {
                                     alt={member.name}
                                     className="w-full object-cover border-l-6 border-b-6 border-primary"
                                 />
-                            </div>
-                            {/* Hover Overlay */}
-                            <div className={`absolute inset-0 flex flex-col justify-center items-center text-center text-white bg-primary bg-opacity-90 transition-opacity duration-300 rounded-t-full ${showOverlay ? "opacity-90" : "opacity-0"} group-hover:opacity-90`}>
-                                <h3 className="text-xl font-bold">{member.name}</h3>
-                                <p className="text-sm">{member.role}</p>
+
+                                {/* Hover Overlay */}
+                                <div className={`absolute inset-0 flex flex-col justify-center items-center text-center text-white bg-primary bg-opacity-90 transition-opacity duration-300 rounded-t-full ${showOverlay ? "opacity-90" : "opacity-0"} group-hover:opacity-90`}>
+                                    <h3 className="text-xl font-bold">{member.name}</h3>
+                                    <p className="text-sm">{member.role}</p>
+                                </div>
                             </div>
                         </div>
                     ))}

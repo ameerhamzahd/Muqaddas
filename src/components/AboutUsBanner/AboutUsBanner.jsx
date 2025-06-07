@@ -19,7 +19,7 @@ const AboutUsBanner = () => {
                             <GiCamel size={20} />
                         </div>
                         <p className="text-lg font-semibold text-[#E6D8CA]">
-                            About ZamZam
+                            About Muqaddas
                         </p>
                     </div>
 

@@ -64,7 +64,7 @@ const blogData = [
 const BlogCard = ({ img, title, date, desc }) => (
     <div className="rounded-2xl overflow-hidden shadow-sm bg-white border border-gray-100 w-full h-full max-w-sm mx-auto">
         <img src={img} alt={title} className="w-full h-64 object-cover rounded-t-2xl" />
-        <div className="p-6">
+        <div className="p-5">
             <div className="flex items-center text-primary text-sm mb-2 pl-2">
                 <FaRegCalendarAlt className="mr-2" />
                 {date}

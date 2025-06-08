@@ -123,7 +123,7 @@ const Register = () => {
     };
 
     return (
-        <div className="relative flex justify-center items-center hero min-h-screen pt-30 pb-15" style={{ backgroundImage: `url(https://res.cloudinary.com/dgt4ygjhp/image/upload/v1749393145/mosque6_ssyih3.jpg)` }}
+        <div className="relative flex justify-center items-center hero min-h-screen pt-30 pb-15" style={{ backgroundImage: `url(https://res.cloudinary.com/dgt4ygjhp/image/upload/v1749400806/mosque7_yawrdm.jpg)` }}
         >
             <div className="absolute inset-0 bg-secondary opacity-75"></div>
 
@@ -143,7 +143,7 @@ const Register = () => {
                     </div>
                     <button
                         onClick={() => navigate("/login")}
-                        className="text-sm font-semibold text-primary mt-2 cursor-pointer hover:underline duration-300 transition-all"
+                        className="text-sm font-semibold text-primary mt-7 cursor-pointer hover:underline duration-300 transition-all"
                     >
                         Login
                     </button>
@@ -159,6 +159,7 @@ const Register = () => {
                             name='name'
                             type="text"
                             className="input input-bordered w-full font-roboto"
+                            placeholder='Enter your name'
                         />
                     </div>
 
@@ -171,6 +172,7 @@ const Register = () => {
                             name='photoURL'
                             type="text"
                             className="input input-bordered w-full font-roboto"
+                            placeholder='Enter your phototURL'
                         />
                     </div>
 
@@ -183,6 +185,7 @@ const Register = () => {
                             name='email'
                             type="email"
                             className="input input-bordered w-full font-roboto"
+                            placeholder='Enter your email'
                         />
                     </div>
 
@@ -195,6 +198,7 @@ const Register = () => {
                             name="password"
                             type={showPassword ? 'text' : 'password'}
                             className="input input-bordered w-full font-roboto pr-12"
+                            placeholder='Enter your password'
                         />
                         <span
                             onClick={() => setShowPassword(!showPassword)}
@@ -218,15 +222,15 @@ const Register = () => {
                         <span className="mx-3 text-sm text-gray-500">OR</span>
                         <div className="flex-grow border-t border-gray-300"></div>
                     </div>
-
-                    {/* Google Login Button */}
-                    <button
-                        onClick={handleGoogleLogin}
-                        className="btn btn-block bg-white text-black border border-gray-300 hover:bg-gray-100"
-                    >
-                        <FaGoogle className="mr-2" /> Login with Google
-                    </button>
                 </form>
+
+                {/* Google Login Button */}
+                <button
+                    onClick={handleGoogleLogin}
+                    className="btn btn-block bg-white text-black border border-gray-300 hover:bg-gray-100"
+                >
+                    <FaGoogle className="mr-2" /> Login with Google
+                </button>
             </motion.div>
         </div>
     );

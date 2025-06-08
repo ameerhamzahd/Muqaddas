@@ -86,7 +86,7 @@ const AboutMuqaddas = () => {
 
                         <div
                             className="relative bg-cover bg-center rounded-2xl p-6 w-full text-white opacity-75"
-                            style={{ backgroundImage: `url(https://res.cloudinary.com/dgt4ygjhp/image/upload/v1749286871/mosque3_ohzyhr.jpg)` }}
+                            style={{ backgroundImage: `url(https://res.cloudinary.com/dgt4ygjhp/image/upload/v1749401619/mosque8_bmzerr.jpg)` }}
                         >
                             <div className="absolute -top-5 left-5 bg-primary p-3 rounded-t-full  text-white text-lg shadow-md">
                             <MdLuggage />

@@ -105,12 +105,12 @@ const Login = () => {
                     <div>
                         <h2 className="text-lg font-bold text-secondary mb-1">Login to your account</h2>
                         <p className="text-sm text-gray-500 font-roboto">
-                            Enter your email below to login to your account
+                            Enter your details below to login.
                         </p>
                     </div>
                     <button
                         onClick={() => navigate("/register")}
-                        className="text-sm font-semibold text-primary mt-2 cursor-pointer hover:underline duration-300 transition-all"
+                        className="text-sm font-semibold text-primary mt-7 cursor-pointer hover:underline duration-300 transition-all"
                     >
                         Register
                     </button>
@@ -127,6 +127,7 @@ const Login = () => {
                             name='email'
                             type="email"
                             className="input input-bordered w-full font-roboto"
+                            placeholder='Enter your email'
                         />
                     </div>
 
@@ -139,6 +140,7 @@ const Login = () => {
                             name="password"
                             type={showPassword ? 'text' : 'password'}
                             className="input input-bordered w-full font-roboto pr-12"
+                            placeholder='Enter your password'
                         />
                         <span
                             onClick={() => setShowPassword(!showPassword)}
@@ -150,11 +152,12 @@ const Login = () => {
 
 
                     {/* Login Button */}
-                    <button
-                        className="form-control btn btn-block bg-secondary text-white hover:bg-secondary/90"
-                    >
-                        Login
-                    </button>
+                    <div className='form-control'>
+                        <button type='submit' className="btn btn-block bg-secondary text-white hover:bg-secondary/90"
+                        >
+                            Login
+                        </button>
+                    </div>
 
                     {/* Divider */}
                     <div className="flex items-center my-4">
@@ -162,15 +165,15 @@ const Login = () => {
                         <span className="mx-3 text-sm text-gray-500">OR</span>
                         <div className="flex-grow border-t border-gray-300"></div>
                     </div>
-
-                    {/* Google Login Button */}
-                    <button
-                        onClick={handleGoogleLogin}
-                        className="btn btn-block bg-white text-black border border-gray-300 hover:bg-gray-100"
-                    >
-                        <FaGoogle className="mr-2" /> Login with Google
-                    </button>
                 </form>
+
+                {/* Google Login Button */}
+                <button
+                    onClick={handleGoogleLogin}
+                    className="btn btn-block bg-white text-black border border-gray-300 hover:bg-gray-100"
+                >
+                    <FaGoogle className="mr-2" /> Login with Google
+                </button>
             </motion.div>
         </div>
     );

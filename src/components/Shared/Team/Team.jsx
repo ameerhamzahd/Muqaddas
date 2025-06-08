@@ -70,7 +70,7 @@ const Team = () => {
                         <RiTeamFill className='mr-2 text-white bg-secondary rounded-full p-1' size={25} />
                         Our Team
                     </p>
-                    <h2 className="text-4xl font-bold text-secondary mt-2">Meet The Best Team</h2>
+                    <h2 className="text-5xl font-bold text-secondary mt-2">Meet The Best Team</h2>
                     <p className="text-gray-500 mt-2 max-w-xl mx-auto">
                         Behind every great journey is a dedicated team — passionate, professional, and committed to making your experience truly exceptional.
                     </p>

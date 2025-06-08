@@ -10,6 +10,8 @@ import AddPackage from '../pages/AddPackage/AddPackage';
 import ManageMyPackages from '../pages/ManageMyPackages/ManageMyPackages';
 import PackageDetails from '../pages/PackageDetails/PackageDetails';
 import PrivacyPolicy from '../pages/PrivacyPolicy/PrivacyPolicy';
+import Login from '../pages/Login/Login';
+import Register from '../pages/Register/Register';
 
 const router = createBrowserRouter(
     [
@@ -49,6 +51,14 @@ const router = createBrowserRouter(
         {
           path: "/privacy-policy",
           Component: PrivacyPolicy
+        },
+        {
+          path: "/login",
+          Component: Login
+        },
+        {
+          path: "/register",
+          Component: Register
         },
       ]
     },

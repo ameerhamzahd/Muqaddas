@@ -11,7 +11,7 @@ const PrivacyPolicy = () => {
                         <div className="flex justify-center mb-4">
                             <FaShieldAlt size={40} className="text-secondary" />
                         </div>
-                        <h1 className="text-4xl font-bold text-secondary mb-4">Privacy Policy</h1>
+                        <h1 className="text-5xl font-bold text-secondary mb-4">Privacy Policy</h1>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                             Your privacy is important to us. This page outlines how we collect, use, and protect your information to ensure transparency and trust.
                         </p>
@@ -59,7 +59,7 @@ const PrivacyPolicy = () => {
                         <div className="flex justify-center mb-4">
                         <FaQuestion size={40} className="text-secondary"/>
                         </div>
-                        <h2 className="text-3xl font-bold text-center text-secondary mb-8">Frequently Asked Questions</h2>
+                        <h2 className="text-5xl font-bold text-center text-secondary mb-8">Frequently Asked Questions</h2>
                         <div className="bg-white rounded-xl shadow-lg p-6 space-y-4">
                             <div className="collapse collapse-arrow bg-base-100 border border-base-300">
                                 <input type="radio" name="my-accordion-2" defaultChecked />

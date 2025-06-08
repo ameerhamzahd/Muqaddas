@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { use, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router';
 import logo from "../../../assets/logo.png"
+import { AuthContext } from '../../../context/AuthContext/AuthContext';
+import { toast, Bounce } from 'react-toastify';
+import userAvatar from '../../../assets/user.png'
+import { TbLogin2, TbLogout2 } from 'react-icons/tb';
 
 const Navbar = () => {
 
@@ -16,6 +20,40 @@ const Navbar = () => {
         } */}
         <li><NavLink to="/about-us" className={navLinkStyle}>About Us</NavLink></li>
     </>
+
+    const { user, logoutUser } = use(AuthContext);
+    const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
+
+    useEffect(() => {
+        localStorage.setItem("theme", theme);
+        const localTheme = localStorage.getItem("theme");
+        document.querySelector("html").setAttribute("data-theme", localTheme);
+    }, [theme]);
+
+
+    const handleToggleTheme = (event) => {
+        setTheme(event.target.checked ? "dark" : "light");
+    };
+
+    const handleLogout = () => {
+        logoutUser()
+            .then(() => {
+                toast.error(`Logged Out Successfully.`, {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    transition: Bounce,
+                });
+            })
+            .catch((error) => {
+                alert(error.message)
+            });
+    };
 
     return (
         <div>
@@ -45,26 +83,45 @@ const Navbar = () => {
                     </div>
 
                     <div className="navbar-end">
-                        {/* {
-                        user ? (
-                            <div className="dropdown dropdown-end relative">
-                                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                    <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                                        <img src={user?.photoURL || userAvatar} alt="User Avatar" />
+                        {
+                            user ? (<>
+                                {
+                                    <input type="checkbox"
+                                        onChange={handleToggleTheme}
+                                        checked={theme === "dark"}
+                                        className="toggle theme-controller" />
+                                }
+
+                                <div className="dropdown dropdown-end relative">
+                                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                        <div className="w-10 rounded-full ring ring-secondary ring-offset-base-100 ring-offset-2">
+                                            <img src={user?.photoURL || userAvatar} alt="User Avatar" />
+                                        </div>
+                                    </label>
+                                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[60] p-2 shadow bg-white rounded-box w-52 text-secondary gap-2">
+                                        <li><NavLink to="/add-package" className={navLinkStyle}>Add Package</NavLink></li>
+                                        <li><NavLink to="/manage-my-packages" className={navLinkStyle}>Manage My Packages</NavLink></li>
+                                        <li><Link onClick={handleLogout} className='flex items-center justify-center gap-1'><TbLogout2 size={20} />Logout</Link></li>
+                                    </ul>
+                                </div>
+                            </>
+                            ) : (
+                                <div className='flex justify-center items-center'>
+                                    {
+                                        <input type="checkbox"
+                                            onChange={handleToggleTheme}
+                                            checked={theme === "dark"}
+                                            className="toggle theme-controller" />
+                                    }
+
+                                    <div className='gap-3 justify-center items-center px-2 md:flex'>
+                                        <Link to="/login" className="flex gap-2 items-center px-6 bg-transparent btn hover:border-secondary">
+                                            <TbLogin2 size={20} /> Login
+                                        </Link>
                                     </div>
-                                </label>
-                                <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[60] p-2 shadow bg-white rounded-box w-52 text-secondary gap-2">
-                                    <li><NavLink to="/add-package" className={navLinkStyle}>Add Package</NavLink></li>
-                                    <li><NavLink to="/manage-my-packages" className={navLinkStyle}>Manage My Packages</NavLink></li>
-                                    <li><Link onClick={handleLogout} className='flex items-center justify-center gap-1'><TbLogout2 size={20} />Logout</Link></li>
-                                </ul>
-                            </div>
-                        ) : (
-                            <Link to="/login" className="btn bg-transparent px-6 ml-2 flex items-center gap-2">
-                                <TbLogin2 size={20} /> Login
-                            </Link>
-                        )
-                    } */}
+                                </div>
+                            )
+                        }
                     </div>
                 </nav>
             </div>

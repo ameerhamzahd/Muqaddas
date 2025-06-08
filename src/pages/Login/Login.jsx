@@ -72,7 +72,7 @@ const Login = () => {
                     transition: Bounce,
                 });
 
-                navigate(`${location.state ? location.state : -1}`)
+                navigate(`${location.state ? location.state : "/"}`)
             })
             .catch((error) => {
                 toast.error(`Login failed: ${error.message}`, {

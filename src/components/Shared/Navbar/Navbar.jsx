@@ -92,7 +92,7 @@ const Navbar = () => {
                                         className="toggle theme-controller" />
                                 }
 
-                                <div className="dropdown dropdown-end relative">
+                                <div className="dropdown dropdown-end relative px-2">
                                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                                         <div className="w-10 rounded-full ring ring-secondary ring-offset-base-100 ring-offset-2">
                                             <img src={user?.photoURL || userAvatar} alt="User Avatar" />

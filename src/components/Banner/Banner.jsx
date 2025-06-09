@@ -55,7 +55,7 @@ const Banner = () => {
                             Experience Divine Journeys with Trusted Guidance and Care
                         </h1>
 
-                        <p className="text-white/80 max-w-lg mb-6 text-sm md:text-base pl-5 border-l-2 font-roboto">
+                        <p className="text-white/80 max-w-lg mb-6 text-sm md:text-base md:pl-5 md:border-l-2 font-roboto">
                             Crafted for your faith and comfort, our packages turn your pilgrimage into a profound experience.
                         </p>
 

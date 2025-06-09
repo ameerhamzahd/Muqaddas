@@ -8,6 +8,8 @@ import { TbLogin2, TbLogout2 } from 'react-icons/tb';
 
 const Navbar = () => {
 
+    const { user, logoutUser } = use(AuthContext);
+
     const navLinkStyle = ({ isActive }) =>
         `hover:transition-all hover:duration-300 hover:text-primary font-bold ${isActive ? 'text-primary' : ''
         }`;
@@ -15,13 +17,12 @@ const Navbar = () => {
     const links = <>
         <li><NavLink to="/" className={navLinkStyle}>Home</NavLink></li>
         <li><NavLink to="/all-packages" className={navLinkStyle}>All Packages</NavLink></li>
-        {/* {
+        {
             user && <li><NavLink to="/my-bookings" className={navLinkStyle}>My Bookings</NavLink></li>
-        } */}
+        }
         <li><NavLink to="/about-us" className={navLinkStyle}>About Us</NavLink></li>
     </>
 
-    const { user, logoutUser } = use(AuthContext);
     const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
 
     useEffect(() => {
@@ -66,7 +67,7 @@ const Navbar = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
                                 </svg>
                             </label>
-                            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[60] p-2 shadow bg-white rounded-box w-52 space-y-1 text-secondary">
+                            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-50 p-2 shadow bg-white rounded-box w-52 space-y-1 text-secondary">
                                 {links}
                             </ul>
                         </div>

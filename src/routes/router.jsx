@@ -12,17 +12,18 @@ import PackageDetails from '../pages/PackageDetails/PackageDetails';
 import PrivacyPolicy from '../pages/PrivacyPolicy/PrivacyPolicy';
 import Login from '../pages/Login/Login';
 import Register from '../pages/Register/Register';
+import Loader from '../components/Shared/Loader/Loader';
 
 const router = createBrowserRouter(
-    [
+  [
     {
       path: "/",
       Component: MainLayout,
       errorElement: <NotFound></NotFound>,
       children: [
         {
-            index: true,
-            Component: Home
+          index: true,
+          Component: Home
         },
         {
           path: "/all-packages",

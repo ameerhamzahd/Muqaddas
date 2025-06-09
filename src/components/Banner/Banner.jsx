@@ -87,7 +87,7 @@ const Banner = () => {
                 onRequestClose={closeModal}
                 contentLabel="YouTube Video"
                 className="relative flex items-center justify-center h-screen"
-                overlayClassName="fixed inset-0 bg-black bg-opacity-60 z-50"
+                overlayClassName="fixed inset-0 backdrop-blur-sm bg-black/40 z-50"
             >
                 {/* Close button at modal level */}
                 <button

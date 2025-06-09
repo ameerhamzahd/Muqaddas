@@ -80,7 +80,7 @@ const BlogCard = ({ img, title, date, desc }) => (
 const ArticleANDBlog = () => {
     return (
         <div>
-            <div className="py-15 bg-white max-w-5xl mx-auto">
+            <div className="py-15 max-w-5xl mx-auto">
                 <div className="text-center mb-10">
                     <p className="text-secondary font-semibold text-md tracking-widest mb-2 flex justify-center items-center">
                     <MdLuggage className='mr-2 text-white bg-secondary rounded-full p-1' size={25}/>

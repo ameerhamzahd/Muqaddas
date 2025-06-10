@@ -4,10 +4,12 @@ import { motion } from "motion/react";
 import { toast } from 'react-toastify';
 import axios from 'axios';
 import { AuthContext } from '../../context/AuthContext/AuthContext';
+import { useNavigate } from 'react-router';
 
 const AddTour = () => {
 
     const { user } = use(AuthContext);
+    const navigate = useNavigate();
 
     const onSubmit = async (data) => {
         const isValid = await trigger();
@@ -37,6 +39,8 @@ const AddTour = () => {
                         draggable: true,
                         theme: "light",
                     });
+
+                    navigate(`${location.state ? location.state : "/manage-my-packages"}`);
                 }
             })
             .catch(error => {
@@ -122,17 +126,17 @@ const AddTour = () => {
                         <div>
                             <label className="label mb-2">Guide Name</label>
                             <input type="text" {...register('guide_name', { required: true })} className="input input-bordered w-full font-roboto"
-                            defaultValue={user.displayName} />
+                            defaultValue={user?.displayName} />
                         </div>
                         <div>
                             <label className="label mb-2">Guide Email</label>
                             <input type="email" {...register('guide_email', { required: true })} className="input input-bordered w-full font-roboto" 
-                            defaultValue={user.email}/>
+                            defaultValue={user?.email}/>
                         </div>
                         <div>
                             <label className="label mb-2">Guide Photo URL</label>
                             <input type="text" {...register('guide_photo', { required: true })} className="input input-bordered w-full font-roboto" 
-                            defaultValue={user.photoURL}/>
+                            defaultValue={user?.photoURL}/>
                         </div>
                         <div>
                             <label className="label mb-2">Guide Contact No.</label>

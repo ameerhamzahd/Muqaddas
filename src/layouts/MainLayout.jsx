@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet, useNavigation, useLocation } from 'react-router';
+import { Outlet, useNavigation } from 'react-router';
 import ScrollToTop from '../components/Shared/ScrollToTop/ScrollToTop';
 import Navbar from '../components/Shared/Navbar/Navbar';
 import Loader from '../components/Shared/Loader/Loader';

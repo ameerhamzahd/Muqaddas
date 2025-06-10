@@ -43,7 +43,9 @@ const router = createBrowserRouter(
         },
         {
           path: "/manage-my-packages",
-          Component: ManageMyPackages
+          Component: ManageMyPackages,
+          loader: () => fetch("http://localhost:3000/packages?email=:email"),
+          hydrateFallbackElement: Loader
         },
         {
           path: "/package-details",

@@ -10,9 +10,9 @@ const ManageMyPackages = () => {
     const { user } = use(AuthContext);
 
     return (
-        <div>
+        <div className=''>
             <Suspense fallback={<Loader></Loader>}>
-                <PackageListing ManageMyPackagesPromise={ManageMyPackagesPromise(user.email)}></PackageListing>
+                <PackageListing user={user}></PackageListing>
             </Suspense>
         </div>
     );

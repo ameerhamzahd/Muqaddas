@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { use } from 'react';
 import { FaFacebook, FaFacebookF, FaTwitter, FaYoutube } from "react-icons/fa";
 import { HiOutlineMail, HiOutlineLocationMarker } from "react-icons/hi";
 import { FaPhoneAlt } from "react-icons/fa";
@@ -11,6 +11,7 @@ import { GrInstagram } from 'react-icons/gr';
 import { FaXTwitter } from 'react-icons/fa6';
 
 const Footer = () => {
+
     return (
         <div>
             <footer className="bg-secondary text-[#e6d8ca] py-12">
@@ -40,9 +41,6 @@ const Footer = () => {
                         <ul className="space-y-2 text-sm">
                             <li><Link to="/" className='font-roboto hover:underline duration-300 transition-all'>Home</Link></li>
                             <li><Link to="/all-packages" className='font-roboto hover:underline duration-300 transition-all'>All Packages</Link></li>
-                            {/* {
-                                user && <li><Link to="/my-bookings" classname='font-roboto hover:underline duration-300 transition-all'>My Bookings</Link></li>
-                            } */}
                             <li><Link to="/about-us" className='font-roboto hover:underline duration-300 transition-all'>About Us</Link></li>
                             <li><Link to="/privacy-policy" className='font-roboto hover:underline duration-300 transition-all'>Privacy Policy</Link></li>
                         </ul>

@@ -178,16 +178,26 @@ const PackageListing = ({ user }) => {
                                             { label: 'Duration', name: 'duration' },
                                             { label: 'Guide Name', name: 'guide_name' },
                                             { label: 'Guide Photo URL', name: 'guide_photo' },
+                                            { label: 'Guide Email', name: 'guide_email' },
+                                            { label: 'Package Details', name: 'package_details', isTextarea: true },
                                             { label: 'Departure Date', name: 'departure_date', type: 'date' },
                                             { label: 'Image URL', name: 'image' },
                                         ].map(field => (
                                             <div key={field.name}>
                                                 <label className="label font-semibold mb-2">{field.label}</label>
-                                                <input
-                                                    type={field.type || 'text'}
-                                                    {...register(field.name, { required: true })}
-                                                    className="input input-bordered w-full font-roboto"
-                                                />
+                                                {field.isTextarea ? (
+                                                    <textarea
+                                                        {...register(field.name, { required: true })}
+                                                        className="textarea textarea-bordered w-full font-roboto"
+                                                        rows={4}
+                                                    />
+                                                ) : (
+                                                    <input
+                                                        type={field.type || 'text'}
+                                                        {...register(field.name, { required: true })}
+                                                        className="input input-bordered w-full font-roboto"
+                                                    />
+                                                )}
                                             </div>
                                         ))}
 

@@ -27,7 +27,9 @@ const router = createBrowserRouter(
         },
         {
           path: "/all-packages",
-          Component: AllPackages
+          Component: AllPackages,
+          loader: () => fetch("http://localhost:3000/packages"),
+          hydrateFallbackElement: Loader
         },
         {
           path: "/my-bookings",

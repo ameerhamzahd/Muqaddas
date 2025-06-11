@@ -50,8 +50,10 @@ const router = createBrowserRouter(
           hydrateFallbackElement: Loader
         },
         {
-          path: "/package-details",
-          Component: PackageDetails
+          path: "/package/:id",
+          Component: PackageDetails,
+          loader: () => fetch("http://localhost:3000/packages"),
+          hydrateFallbackElement: Loader
         },
         {
           path: "/privacy-policy",

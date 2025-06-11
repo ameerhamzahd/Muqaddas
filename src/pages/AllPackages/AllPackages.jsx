@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router';
+import { Link, useLoaderData } from 'react-router';
 import { TbPackages } from "react-icons/tb";
 import { motion } from "motion/react";
 import axios from 'axios';
@@ -51,7 +51,7 @@ const AllPackages = () => {
                     </h1>
 
                     <p className="text-base sm:text-lg text-[#E6D8CA] leading-relaxed">
-                        Your Pilgrimage Packages...
+                        Your Pilgrimage Packages, Perfectly Arranged for a Seamless and Spiritually Fulfilling Journey.
                     </p>
 
                     <div className="mt-6 flex justify-center">
@@ -67,12 +67,12 @@ const AllPackages = () => {
             </div>
 
             <div className='max-w-5xl mx-auto py-15'>
-                <div className="space-y-4 text-center">
+                <div className="space-y-4 text-center px-5 md:px-0">
                     <h1 className="text-5xl font-bold text-secondary md:text-5xl">
-                    Sacred Steps Awaits
+                        Sacred Steps Awaits
                     </h1>
                     <p className="mx-auto max-w-2xl text-xl text-primary">
-                    Begin your spiritual journey with comfort, care, and complete guidance.
+                        Begin your spiritual journey with comfort, care, and complete guidance.
                     </p>
                     <div className="flex gap-2 justify-center items-center mt-4 text-sm text-primary">
                         <span className='font-roboto'>{myPackages.length} packages available</span>
@@ -94,8 +94,8 @@ const AllPackages = () => {
                                 </div>
                                 <div className="p-5">
                                     <div className='flex justify-between items-center pb-3'>
-                                    <h2 className="text-xl font-bold text-secondary">{pckg.tour_name}</h2>
-                                    <span className='text-lg font-bold text-primary font-roboto'>${pckg.price}</span>
+                                        <h2 className="text-xl font-bold text-secondary">{pckg.tour_name}</h2>
+                                        <span className='text-lg font-bold text-primary font-roboto'>${pckg.price}</span>
                                     </div>
                                     <div className="flex items-center gap-3 border-t-2 border-b-2 border-[#E6D8CA] border-dashed py-3">
                                         <img src={pckg.guide_photo} alt={pckg.guide_name} className="w-10 h-10 rounded-full object-cover" />
@@ -105,9 +105,11 @@ const AllPackages = () => {
                                         <span className='font-roboto'>🕒 {pckg.duration}</span>
                                         <span className='font-roboto'>📅 {pckg.departure_date}</span>
                                     </div>
-                                    <button className="btn btn-sm btn-primary w-full text-white mt-3">
-                                        View Details
-                                    </button>
+                                    <Link to={`/package/${pckg._id}`}>
+                                        <button className="btn btn-sm btn-primary w-full text-white mt-3">
+                                            View Details
+                                        </button>
+                                    </Link>
                                 </div>
                             </div>
                         ))

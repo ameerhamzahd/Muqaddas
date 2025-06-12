@@ -13,6 +13,7 @@ import PrivacyPolicy from '../pages/PrivacyPolicy/PrivacyPolicy';
 import Login from '../pages/Login/Login';
 import Register from '../pages/Register/Register';
 import Loader from '../components/Shared/Loader/Loader';
+import PrivateRoute from '../routes/PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter(
   [
@@ -23,38 +24,54 @@ const router = createBrowserRouter(
       children: [
         {
           index: true,
-          Component: Home
+          Component: Home,
+          // loader: () => fetch("https://muqaddas-server.vercel.app/packages"),
+          hydrateFallbackElement: Loader
         },
         {
           path: "/all-packages",
           Component: AllPackages,
-          loader: () => fetch("http://localhost:3000/packages"),
+          loader: () => fetch("https://muqaddas-server.vercel.app/packages"),
           hydrateFallbackElement: Loader
         },
         {
           path: "/my-bookings",
-          Component: MyBookings,
-          loader: () => fetch("http://localhost:3000/bookings?email=:email"),
+          element:
+          <PrivateRoute>
+            <MyBookings></MyBookings>
+          </PrivateRoute>,
+          loader: ({params}) => fetch(`https://muqaddas-server.vercel.app/bookings?email=${params.email}`),
           hydrateFallbackElement: Loader
         },
         {
           path: "/about-us",
-          Component: AboutUs
+          Component: AboutUs,
+          // loader: () => fetch("https://muqaddas-server.vercel.app/packages"),
+          hydrateFallbackElement: Loader
         },
         {
           path: "/add-package",
-          Component: AddPackage
+          element: 
+          <PrivateRoute>
+            <AddPackage></AddPackage>
+          </PrivateRoute>
         },
         {
           path: "/manage-my-packages",
-          Component: ManageMyPackages,
-          loader: () => fetch("http://localhost:3000/packages?email=:email"),
+          element:
+          <PrivateRoute>
+            <ManageMyPackages></ManageMyPackages>
+          </PrivateRoute>,
+          loader: ({params}) => fetch(`https://muqaddas-server.vercel.app/packages?email=${params.email}`),
           hydrateFallbackElement: Loader
         },
         {
           path: "/package/:id",
-          Component: PackageDetails,
-          loader: () => fetch("http://localhost:3000/packages"),
+          element:
+          <PrivateRoute>
+            <PackageDetails></PackageDetails>
+          </PrivateRoute>,
+          loader: () => fetch("https://muqaddas-server.vercel.app/packages"),
           hydrateFallbackElement: Loader
         },
         {

@@ -12,12 +12,12 @@ const MyBookings = () => {
 
     useEffect(() => {
         if (user?.email) {
-            axios.get(`http://localhost:3000/bookings?email=${user.email}`).then(response => setMyBookings(response.data))
+            axios.get(`https://muqaddas-server.vercel.app/bookings?email=${user.email}`).then(response => setMyBookings(response.data))
         }
     }, [user?.email])
 
     const handleStatus = (event, booking_id) => {
-        axios.patch(`http://localhost:3000/booking/${booking_id}`, {
+        axios.patch(`https://muqaddas-server.vercel.app/booking/${booking_id}`, {
             status: event.target.value
         })
             .then(response => {
@@ -34,7 +34,7 @@ const MyBookings = () => {
 
     return (
         <div className="relative flex justify-center items-center hero min-h-screen pt-30 pb-15"
-            style={{ backgroundImage: `url(https://res.cloudinary.com/dgt4ygjhp/image/upload/v1749475548/mosque10_bhd65v.jpg)` }}>
+            style={{ backgroundImage: `url(https://res.cloudinary.com/dgt4ygjhp/image/upload/v1749745478/mosque13_dmqvf0.jpg)` }}>
             <div className="absolute inset-0 bg-secondary opacity-75"></div>
 
             <div className="relative px-5 w-full">

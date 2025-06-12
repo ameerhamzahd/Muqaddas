@@ -27,7 +27,7 @@ const AddTour = () => {
             return;
         }
 
-        axios.post("http://localhost:3000/packages", data)
+        axios.post("https://muqaddas-server.vercel.app/packages", data)
             .then(response => {
                 if (response.data.insertedId) {
                     toast.success("Tour created successfully!", {

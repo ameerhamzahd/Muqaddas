@@ -62,8 +62,10 @@ const blogData = [
 ];
 
 const BlogCard = ({ img, title, date, desc }) => (
-    <div className="rounded-2xl overflow-hidden shadow-sm bg-white border border-gray-100 w-full h-full max-w-sm mx-auto">
-        <img src={img} alt={title} className="w-full h-64 object-cover rounded-t-2xl" />
+    <div className="rounded-2xl overflow-hidden shadow-sm bg-white border border-gray-100 w-full h-full max-w-sm mx-auto group transition duration-300">
+        <div className='overflow-hidden'>
+            <img src={img} alt={title} className="w-full h-64 object-cover rounded-t-2xl group-hover:scale-110 transition-transform duration-500" />
+        </div>
         <div className="p-5">
             <div className="flex items-center text-primary text-sm mb-2 pl-2">
                 <FaRegCalendarAlt className="mr-2" />
@@ -71,7 +73,7 @@ const BlogCard = ({ img, title, date, desc }) => (
             </div>
             <div className='border-l-2 pl-7 border-primary'>
                 <h3 className="text-xl font-semibold text-secondary mb-2">{title}</h3>
-                <p className="text-gray-500 text-sm mb-4 font-roboto">{desc}</p>
+                <p className="text-gray-500 text-sm mb-4 font-roboto italic">"{desc}"</p>
             </div>
         </div>
     </div>
@@ -83,9 +85,9 @@ const ArticleANDBlog = () => {
             <div className="py-15 max-w-5xl mx-auto">
                 <div className="text-center mb-10">
                     <p className="text-secondary font-semibold text-md tracking-widest mb-2 flex justify-center items-center">
-                    <MdLuggage className='mr-2 text-white bg-secondary rounded-full p-1' size={25}/>
+                        <MdLuggage className='mr-2 text-white bg-secondary rounded-full p-1' size={25} />
                         Our Blog
-                        </p>
+                    </p>
                     <h2 className="text-5xl font-bold text-secondary">Article & Blog</h2>
                 </div>
                 <Carousel

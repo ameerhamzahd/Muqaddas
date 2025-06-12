@@ -18,7 +18,7 @@ const ManageMyPackages = () => {
 
     useEffect(() => {
         if (user?.email) {
-            axios.get(`http://localhost:3000/packages?email=${user.email}`).then(response => setMyPackages(response.data))
+            axios.get(`https://muqaddas-server.vercel.app/packages?email=${user.email}`).then(response => setMyPackages(response.data))
         }
     }, [user?.email])
 
@@ -33,7 +33,7 @@ const ManageMyPackages = () => {
     const handleUpdate = (data) => {
         const { _id, ...safeData } = data;
 
-        axios.put(`http://localhost:3000/package/${selectedPackage._id}`, safeData)
+        axios.put(`https://muqaddas-server.vercel.app/package/${selectedPackage._id}`, safeData)
             .then(response => {
                 if (response.data.modifiedCount) {
                     Swal.fire({
@@ -43,7 +43,7 @@ const ManageMyPackages = () => {
                         showConfirmButton: false,
                     });
 
-                    axios.get(`http://localhost:3000/packages?email=${user.email}`)
+                    axios.get(`https://muqaddas-server.vercel.app/packages?email=${user.email}`)
                         .then(response => setMyPackages(response.data));
 
                     setShowModal(false);
@@ -66,7 +66,7 @@ const ManageMyPackages = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:3000/package/${_id}`)
+                axios.delete(`https://muqaddas-server.vercel.app/package/${_id}`)
                     .then(response => {
                         if (response.data.deletedCount > 0) {
                             Swal.fire("Deleted!", "Your package has been deleted.", "success");
@@ -142,7 +142,7 @@ const ManageMyPackages = () => {
                                                 <img src={pckg.guide_photo} className="w-6 h-6 rounded-full mx-auto mb-2" alt="" />
                                                 <span>{pckg.guide_name}</span>
                                             </td>
-                                            <td className='font-roboto'>{pckg.bookingCount}</td>
+                                            <td className='font-roboto text-center'>{pckg.booking_count ? pckg.booking_count : 0}</td>
                                             <td className='font-roboto'>{pckg.departure_date}</td>
                                             <td className="space-y-2">
                                                 <button onClick={() => handleEditClick(pckg)} className="text-primary text-sm flex gap-1 items-center hover:underline cursor-pointer">

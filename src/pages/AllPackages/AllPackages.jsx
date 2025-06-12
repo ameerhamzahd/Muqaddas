@@ -17,7 +17,7 @@ const AllPackages = () => {
     useEffect(() => {
         const delayDebounce = setTimeout(async () => {
             const { data } = await axios.get(
-                `http://localhost:3000/packages${searchTerm ? `?search=${encodeURIComponent(searchTerm)}` : ''}`
+                `https://muqaddas-server.vercel.app/packages${searchTerm ? `?search=${encodeURIComponent(searchTerm)}` : ''}`
             );
             setMyPackages(Array.isArray(data) ? data : []);
         }, 500);
@@ -28,7 +28,7 @@ const AllPackages = () => {
     return (
         <div>
             <div
-                className="hero min-h-screen pt-15 md:pt-0"
+                className="relative hero min-h-screen pt-15 md:pt-0"
                 style={{ backgroundImage: `url(https://res.cloudinary.com/dgt4ygjhp/image/upload/v1749619957/mosque11_ndiw5y.jpg)` }}
             >
                 <div className="absolute inset-0 bg-secondary opacity-85"></div>

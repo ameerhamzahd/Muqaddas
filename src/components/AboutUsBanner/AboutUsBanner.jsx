@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const AboutUsBanner = () => {
     return (
         <div>
-            <div className="hero min-h-screen" style={{ backgroundImage: `url(https://res.cloudinary.com/dgt4ygjhp/image/upload/v1749310365/mosque4_cbpa7u.jpg)` }}>
+            <div className="relative hero min-h-screen" style={{ backgroundImage: `url(https://res.cloudinary.com/dgt4ygjhp/image/upload/v1749310365/mosque4_cbpa7u.jpg)` }}>
                 <div className="absolute inset-0 bg-secondary opacity-85"></div>
 
                 <motion.div

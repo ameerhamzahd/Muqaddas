@@ -3,6 +3,8 @@ import { Link, useLoaderData } from 'react-router';
 import { TbPackages } from "react-icons/tb";
 import { motion } from "motion/react";
 import axios from 'axios';
+import { GiDuration } from 'react-icons/gi';
+import { MdOutlineDateRange } from 'react-icons/md';
 
 const AllPackages = () => {
     const initialPackages = useLoaderData();
@@ -84,7 +86,7 @@ const AllPackages = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-5 lg:px-0 pt-15">
                     {myPackages.length > 0 ? (
                         myPackages.map((pckg) => (
-                            <div key={pckg._id} className="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl group">
+                            <div key={pckg._id} className="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl group flex flex-col justify-between">
                                 <div className="h-48 overflow-hidden">
                                     <img
                                         src={pckg.image}
@@ -102,8 +104,8 @@ const AllPackages = () => {
                                         <span className="font-medium text-sm text-gray-600">{pckg.guide_name}</span>
                                     </div>
                                     <div className="flex justify-between items-center text-sm text-gray-600 pt-3">
-                                        <span className='font-roboto'>🕒 {pckg.duration}</span>
-                                        <span className='font-roboto'>📅 {pckg.departure_date}</span>
+                                        <span className='font-roboto flex items-center gap-1'><GiDuration /> {pckg.duration}</span>
+                                        <span className='font-roboto flex items-center gap-1'><MdOutlineDateRange /> {pckg.departure_date}</span>
                                     </div>
                                     <Link to={`/package/${pckg._id}`}>
                                         <button className="btn btn-sm btn-primary w-full text-white mt-3">

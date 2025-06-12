@@ -208,7 +208,6 @@ const PackageListing = ({ user }) => {
                                 </div>
                             </div>
                         )}
-
                     </div>
                 </motion.div>
             </div>

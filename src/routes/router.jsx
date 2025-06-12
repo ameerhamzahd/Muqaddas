@@ -33,7 +33,9 @@ const router = createBrowserRouter(
         },
         {
           path: "/my-bookings",
-          Component: MyBookings
+          Component: MyBookings,
+          loader: () => fetch("http://localhost:3000/bookings?email=:email"),
+          hydrateFallbackElement: Loader
         },
         {
           path: "/about-us",

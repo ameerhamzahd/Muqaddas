@@ -52,7 +52,7 @@ const PackageDetails = () => {
             buyer_email: user.email,
             booking_date: new Date().toISOString(),
             special_note: data.special_note,
-            status: 'pending'
+            status: 'Pending'
         };
 
         axios.post('http://localhost:3000/bookings', bookingData)

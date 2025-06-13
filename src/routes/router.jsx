@@ -13,7 +13,8 @@ import PrivacyPolicy from '../pages/PrivacyPolicy/PrivacyPolicy';
 import Login from '../pages/Login/Login';
 import Register from '../pages/Register/Register';
 import Loader from '../components/Shared/Loader/Loader';
-import PrivateRoute from '../routes/PrivateRoute/PrivateRoute';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
+
 
 const router = createBrowserRouter(
   [
@@ -25,7 +26,7 @@ const router = createBrowserRouter(
         {
           index: true,
           Component: Home,
-          // loader: () => fetch("https://muqaddas-server.vercel.app/packages"),
+          loader: () => fetch("https://muqaddas-server.vercel.app/close-packages"),
           hydrateFallbackElement: Loader
         },
         {

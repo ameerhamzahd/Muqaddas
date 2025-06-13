@@ -13,10 +13,10 @@ const PrivateRoute = ({ children }) => {
     }
 
     if(loading){
-        return <Loader></Loader>
+        return <Loader></Loader>;
     }
 
-    return <Navigate to="/login" state={location.pathname}></Navigate>
+    return <Navigate to="/login" state={location.pathname}></Navigate>;
 };
 
 export default PrivateRoute;

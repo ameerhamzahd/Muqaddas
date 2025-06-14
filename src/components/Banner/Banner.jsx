@@ -1,10 +1,9 @@
+// Banner.jsx
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import { FaRegNewspaper, FaArrowRight, FaPlay } from "react-icons/fa";
-import { motion } from "motion/react"
+import { motion } from "framer-motion";
 import { Link } from 'react-router';
-
-Modal.setAppElement('#root'); // required for screen readers
 
 const Banner = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -21,7 +20,6 @@ const Banner = () => {
                 ></div>
 
                 <div className="relative flex flex-col md:flex-row items-center justify-center md:justify-between gap-10 pt-30 pb-15 md:pb-0 max-w-5xl mx-auto px-3 lg:px-0">
-                    {/* Left Image */}
                     <motion.div
                         initial={{ opacity: 0, x: -40 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -37,7 +35,6 @@ const Banner = () => {
                         </div>
                     </motion.div>
 
-                    {/* Right Text Section */}
                     <motion.div
                         initial={{ opacity: 0, x: 40 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -67,15 +64,13 @@ const Banner = () => {
                                 </button>
                             </Link>
 
-                            <Link>
-                                <button
-                                    onClick={openModal}
-                                    className="btn btn-outline text-white border-white hover:bg-white hover:text-secondary rounded-full"
-                                >
-                                    <FaPlay className="mr-2" />
-                                    Watch Video
-                                </button>
-                            </Link>
+                            <button
+                                onClick={openModal}
+                                className="btn btn-outline text-white border-white hover:bg-white hover:text-secondary rounded-full"
+                            >
+                                <FaPlay className="mr-2" />
+                                Watch Video
+                            </button>
                         </div>
                     </motion.div>
                 </div>
@@ -85,11 +80,10 @@ const Banner = () => {
             <Modal
                 isOpen={isModalOpen}
                 onRequestClose={closeModal}
-                contentLabel="YouTube Video"
+                contentLabel="Muqaddas Intro Video"
                 className="relative flex items-center justify-center h-screen"
                 overlayClassName="fixed inset-0 backdrop-blur-sm bg-black/40 z-50"
             >
-                {/* Close button at modal level */}
                 <button
                     onClick={closeModal}
                     className="absolute top-4 right-6 text-white text-3xl z-50 hover:scale-110 cursor-pointer"
@@ -97,7 +91,6 @@ const Banner = () => {
                     &times;
                 </button>
 
-                {/* Video box */}
                 <div className="relative w-full max-w-4xl aspect-video bg-black rounded-lg overflow-hidden shadow-lg">
                     <iframe
                         width="100%"

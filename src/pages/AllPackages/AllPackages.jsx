@@ -5,8 +5,10 @@ import { motion } from "motion/react";
 import axios from 'axios';
 import { GiDuration } from 'react-icons/gi';
 import { MdOutlineDateRange } from 'react-icons/md';
+import { AuthContext } from '../../context/AuthContext/AuthContext';
 
 const AllPackages = () => {
+
     const initialPackages = useLoaderData();
 
     const [myPackages, setMyPackages] = useState(

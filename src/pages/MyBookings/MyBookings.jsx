@@ -12,9 +12,13 @@ const MyBookings = () => {
 
     useEffect(() => {
         if (user?.email) {
-            axios.get(`https://muqaddas-server.vercel.app/bookings?email=${user.email}`).then(response => setMyBookings(response.data))
+            axios.get(`https://muqaddas-server.vercel.app/bookings?email=${user.email}`, {
+                headers: {
+                    authorization: `Bearer ${user.accessToken}`
+                }
+            }).then(response => setMyBookings(response.data))
         }
-    }, [user?.email])
+    }, [user?.email, user.accessToken])
 
     const handleStatus = (event, booking_id) => {
         axios.patch(`https://muqaddas-server.vercel.app/booking/${booking_id}`, {

@@ -26,10 +26,10 @@ const ParallaxCards = ({ packages }) => {
                 >
                     <h3 className="text-sm text-secondary font-semibold flex justify-center items-center gap-2 mb-3"> <span className='bg-secondary p-1 rounded-full'><BiSolidPlaneAlt className='text-white' /></span>Special Offers</h3>
                     <h2 className="text-5xl font-bold text-secondary mb-3">
-                        Hajj and Umrah Special Offer
+                    Answer the Divine Call with Ease
                     </h2>
                     <p className="text-gray-600 max-w-xl mx-auto mb-10 font-roboto">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                    Meticulously Crafted Pilgrimage Experiences Await.
                     </p>
 
                     <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">

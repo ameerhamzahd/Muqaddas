@@ -79,20 +79,20 @@ const PackageDetails = () => {
         <div className="relative flex justify-center items-center hero min-h-screen pt-30 pb-15" style={{ backgroundImage: `url(https://res.cloudinary.com/dgt4ygjhp/image/upload/v1749745661/mosque12_nzowfl.jpg)` }}>
             <div className="absolute inset-0 bg-secondary opacity-75"></div>
 
-            <div className='relative mx-auto max-w-5xl'>
-                <div className="mx-5 grid gap-10 p-5 bg-white rounded-2xl shadow-md lg:grid-cols-2">
-                    <motion.div
-                        initial={{ opacity: 0, x: -40 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8 }}
+            <div className='relative mx-auto max-w-5xl grid lg:grid-cols-5 gap-5'>
+                <motion.div 
+                initial={{ opacity: 0, x: -40 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                className="mx-5 lg:mx-0 grid gap-10 p-5 bg-white rounded-2xl shadow-md lg:col-span-3">
+                    <div
+                        
                         className="flex justify-center items-center">
                         <img src={image} alt={tour_name} className="object-cover w-full rounded-2xl" />
-                    </motion.div>
+                    </div>
 
-                    <motion.div
-                        initial={{ opacity: 0, x: 40 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 1 }}
+                    <div
+                        
                         className="flex flex-col gap-4 justify-center">
                         <div className='pb-3 border-b-2 border-gray-400 border-dashed flex justify-between items-center'>
                             <h2 className=" text-2xl font-bold text-gray-800 ">{tour_name}</h2>
@@ -100,7 +100,7 @@ const PackageDetails = () => {
                         </div>
 
                         <div className='pb-3 text-center border-b-2 border-gray-400 border-dashed md:text-left'>
-                            <p className='flex flex-col text-md font-roboto'><strong className='flex items-center gap-1'><GoPackage /> Package Details:</strong> {package_details}</p>
+                            <p className='flex flex-col text-md font-roboto'><strong className='flex items-center justify-center md:justify-start gap-1'><GoPackage /> Package Details:</strong> {package_details}</p>
                         </div>
 
                         <div className='gap-4 justify-center pb-3 text-center border-b-2 border-gray-400 border-dashed md:text-left grid md:grid-cols-2'>
@@ -127,8 +127,40 @@ const PackageDetails = () => {
                                 Book Now
                             </button>
                         </div>
-                    </motion.div>
-                </div>
+                    </div>
+                </motion.div>
+
+                <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1 }} 
+                className='lg:col-span-2 mx-5 lg:mx-0'>
+                    <div className='bg-white rounded-2xl shadow-md p-5 grid gap-5 md:grid-cols-2 lg:grid-cols-none'>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d237684.5851863394!2d39.68173388279316!3d21.43625436959531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c21b4ced818775%3A0x98ab2469cf70c9ce!2sMakkah%20Saudi%20Arabia!5e0!3m2!1sen!2sbd!4v1750093479752!5m2!1sen!2sbd"
+                            width="100%"
+                            height="450"
+                            style={{ border: 0 }}
+                            allowFullScreen=""
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            title="Makkah Map"
+                            className="rounded-lg shadow-lg"
+                        ></iframe>
+
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d232410.1505620134!2d39.452745144493726!3d24.471295543841833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15bdbe5197d220d5%3A0x2e54514fea3b08d9!2sMadinah%20Saudi%20Arabia!5e0!3m2!1sen!2sbd!4v1750095461589!5m2!1sen!2sbd"
+                            width="100%"
+                            height="450"
+                            style={{ border: 0 }}
+                            allowFullScreen=""
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            title="Madinah Map"
+                            className="rounded-lg shadow-lg"
+                        ></iframe>
+                    </div>
+                </motion.div>
 
                 {showModal && (
                     <motion.div
@@ -174,7 +206,6 @@ const PackageDetails = () => {
                                     <button type="submit" className="btn btn-primary text-white">Book Now</button>
                                 </div>
                             </form>
-
                         </div>
                     </motion.div>
                 )}

@@ -12,6 +12,7 @@ import { TbBrandBooking } from 'react-icons/tb';
 import { useForm } from 'react-hook-form';
 import { toast, Bounce } from 'react-toastify';
 import axios from 'axios';
+import { Helmet } from 'react-helmet-async';
 
 const PackageDetails = () => {
 
@@ -77,6 +78,10 @@ const PackageDetails = () => {
 
     return (
         <div className="relative flex justify-center items-center hero min-h-screen pt-30 pb-15" style={{ backgroundImage: `url(https://res.cloudinary.com/dgt4ygjhp/image/upload/v1749745661/mosque12_nzowfl.jpg)` }}>
+            <Helmet>
+                <title>Muqaddas | Package Details</title>
+            </Helmet>
+
             <div className="absolute inset-0 bg-secondary opacity-75"></div>
 
             <div className='relative mx-auto max-w-5xl grid lg:grid-cols-5 gap-5'>

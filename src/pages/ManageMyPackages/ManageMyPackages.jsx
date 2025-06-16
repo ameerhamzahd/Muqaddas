@@ -6,6 +6,7 @@ import { MdEdit, MdDelete } from 'react-icons/md';
 import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
 import { motion } from "motion/react";
+import { Helmet } from 'react-helmet-async';
 
 
 const ManageMyPackages = () => {
@@ -93,6 +94,10 @@ const ManageMyPackages = () => {
     return (
         <div className="relative flex justify-center items-center hero min-h-screen pt-30 pb-15"
             style={{ backgroundImage: `url(https://res.cloudinary.com/dgt4ygjhp/image/upload/v1749475548/mosque10_bhd65v.jpg)` }}>
+            <Helmet>
+                <title>Muqaddas | Manage My Packages</title>
+            </Helmet>
+            
             <div className="absolute inset-0 bg-secondary opacity-75"></div>
 
             <div className="relative px-5 w-full">

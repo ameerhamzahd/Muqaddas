@@ -3,10 +3,14 @@ import AboutUsBanner from '../../components/AboutUsBanner/AboutUsBanner';
 import AboutMuqaddas from '../../components/Shared/AboutMuqaddas/AboutMuqaddas';
 import CountUpSection from '../../components/Shared/CountUpSection/CountUpSection';
 import Team from '../../components/Shared/Team/Team';
+import { Helmet } from 'react-helmet-async';
 
 const AboutUs = () => {
     return (
         <div>
+            <Helmet>
+                <title>Muqaddas | About Us</title>
+            </Helmet>
             <div>
                 <AboutUsBanner></AboutUsBanner>
             </div>

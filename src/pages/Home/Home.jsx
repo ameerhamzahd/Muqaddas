@@ -6,6 +6,7 @@ import ArticleANDBlog from '../../components/ArticleANDBlog/ArticleANDBlog';
 import Team from '../../components/Shared/Team/Team';
 import ParallaxCards from '../../components/ParallaxCards/ParallaxCards';
 import { useLoaderData } from 'react-router';
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
 
@@ -13,6 +14,10 @@ const Home = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Muqaddas</title>
+            </Helmet>
+
             <div>
                 <Banner></Banner>
             </div>

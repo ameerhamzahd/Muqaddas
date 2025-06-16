@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import axios from 'axios';
 import { AuthContext } from '../../context/AuthContext/AuthContext';
 import { useNavigate } from 'react-router';
+import { Helmet } from 'react-helmet-async';
 
 const AddTour = () => {
 
@@ -62,6 +63,10 @@ const AddTour = () => {
 
     return (
         <div className="relative flex justify-center items-center hero min-h-screen pt-30 pb-15" style={{ backgroundImage: `url(https://res.cloudinary.com/dgt4ygjhp/image/upload/v1749464853/mosque9_qb5vaq.jpg)` }}>
+            <Helmet>
+                <title>Muqaddas | Add Package</title>
+            </Helmet>
+            
             <div className="absolute inset-0 bg-secondary opacity-75"></div>
 
             <motion.div

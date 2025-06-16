@@ -4,10 +4,15 @@ import { FaHome } from "react-icons/fa";
 import { motion } from "motion/react";
 import { Link } from "react-router";
 import { GiCamel } from "react-icons/gi";
+import { Helmet } from 'react-helmet-async';
 
 const NotFound = () => {
     return (
         <div>
+            <Helmet>
+                <title>Muqaddas | 404</title>
+            </Helmet>
+
             <div className="hero min-h-screen" style={{ backgroundImage: `url(https://res.cloudinary.com/dgt4ygjhp/image/upload/v1749310364/mosque1_k5fr5c.jpg)` }}>
                 <div className="absolute inset-0 bg-secondary opacity-60"></div>
 

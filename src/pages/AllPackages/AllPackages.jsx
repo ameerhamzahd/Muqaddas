@@ -6,6 +6,7 @@ import axios from 'axios';
 import { GiDuration } from 'react-icons/gi';
 import { MdOutlineDateRange } from 'react-icons/md';
 import { AuthContext } from '../../context/AuthContext/AuthContext';
+import { Helmet } from 'react-helmet-async';
 
 const AllPackages = () => {
 
@@ -29,6 +30,10 @@ const AllPackages = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Muqaddas | All Packages</title>
+            </Helmet>
+
             <div
                 className="relative hero min-h-screen pt-15 md:pt-0"
                 style={{ backgroundImage: `url(https://res.cloudinary.com/dgt4ygjhp/image/upload/v1749619957/mosque11_ndiw5y.jpg)` }}

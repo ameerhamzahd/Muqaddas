@@ -4,6 +4,7 @@ import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router";
 import { AuthContext } from '../../context/AuthContext/AuthContext';
 import { toast, Bounce } from 'react-toastify';
+import { Helmet } from 'react-helmet-async';
 
 const Register = () => {
 
@@ -125,6 +126,10 @@ const Register = () => {
     return (
         <div className="relative flex justify-center items-center hero min-h-screen pt-30 pb-15" style={{ backgroundImage: `url(https://res.cloudinary.com/dgt4ygjhp/image/upload/v1749400806/mosque7_yawrdm.jpg)` }}
         >
+            <Helmet>
+                <title>Muqaddas | Register</title>
+            </Helmet>
+
             <div className="absolute inset-0 bg-secondary opacity-75"></div>
 
             <motion.div

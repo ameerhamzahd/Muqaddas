@@ -3,6 +3,7 @@ import { AuthContext } from '../../context/AuthContext/AuthContext';
 import axios from 'axios';
 import { motion } from "motion/react";
 import { toast, Bounce } from 'react-toastify';
+import { Helmet } from 'react-helmet-async';
 
 const MyBookings = () => {
 
@@ -39,6 +40,10 @@ const MyBookings = () => {
     return (
         <div className="relative flex justify-center items-center hero min-h-screen pt-30 pb-15"
             style={{ backgroundImage: `url(https://res.cloudinary.com/dgt4ygjhp/image/upload/v1749745478/mosque13_dmqvf0.jpg)` }}>
+            <Helmet>
+                <title>Muqaddas | My Bookings</title>
+            </Helmet>
+            
             <div className="absolute inset-0 bg-secondary opacity-75"></div>
 
             <div className="relative px-5 w-full">

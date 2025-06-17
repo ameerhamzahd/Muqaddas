@@ -79,7 +79,7 @@ The goal of **Muqaddas** is to streamline the process of exploring, selecting, a
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/ameerhamzahd/muqaddas.git
-   cd dwellmate-client
+   cd muqaddas
 
 
 2. **Install dependencies:**:

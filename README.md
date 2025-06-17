@@ -35,14 +35,6 @@ Welcome to **Muqaddas**, a full-featured web platform designed to simplify the j
 - **Firebase Auth** — User authentication
 - **Framer Motion** — Animations and transitions
 
-### Backend
-
-- **Express.js** — Server and routing
-- **MongoDB** — NoSQL database
-- **Firebase Admin SDK** — Admin-level auth & user mgmt
-- **Dotenv** — Environment variable handling
-- **CORS** — Secure cross-origin access
-
 ---
 
 ## 📦 NPM Packages Used

@@ -11,12 +11,6 @@ Welcome to **Muqaddas**, a full-featured web platform designed to simplify the j
 
 ---
 
-## 🎯 Project Purpose
-
-The goal of **Muqaddas** is to streamline the process of exploring, selecting, and booking pilgrimage packages. We combine clarity, trust, and modern UI/UX design to empower users with the right tools and information at every step of their holy journey.
-
----
-
 ## ✨ Key Features
 
 - 📦 View curated Hajj & Umrah packages
@@ -34,10 +28,10 @@ The goal of **Muqaddas** is to streamline the process of exploring, selecting, a
 
 ### Frontend
 
-- **React 19** — Core UI library
-- **Tailwind CSS 4** — Utility-first CSS framework
+- **React** — Core UI library
+- **Tailwind CSS** — Utility-first CSS framework
 - **DaisyUI** — Tailwind UI components
-- **React Router 7** — Declarative routing
+- **React Router** — Declarative routing
 - **Firebase Auth** — User authentication
 - **Framer Motion** — Animations and transitions
 

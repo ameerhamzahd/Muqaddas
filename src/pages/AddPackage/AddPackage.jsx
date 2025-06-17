@@ -28,7 +28,11 @@ const AddTour = () => {
             return;
         }
 
-        axios.post("https://muqaddas-server.vercel.app/packages", data)
+        axios.post("https://muqaddas-server.vercel.app/packages", data, {
+            headers: {
+                authorization: `Bearer ${user.accessToken}`
+            }
+        })
             .then(response => {
                 if (response.data.insertedId) {
                     toast.success("Tour created successfully!", {

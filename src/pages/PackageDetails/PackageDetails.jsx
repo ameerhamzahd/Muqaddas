@@ -1,5 +1,5 @@
-import React, { use, useState } from 'react';
-import { useLoaderData, useNavigate, useParams } from 'react-router';
+import React, { use, useEffect, useState } from 'react';
+import { useLocation, useNavigate, useParams } from 'react-router';
 import { AuthContext } from '../../context/AuthContext/AuthContext';
 import { motion } from "motion/react";
 import { GiDuration } from 'react-icons/gi';
@@ -12,20 +12,43 @@ import { TbBrandBooking } from 'react-icons/tb';
 import { useForm } from 'react-hook-form';
 import { toast, Bounce } from 'react-toastify';
 import axios from 'axios';
+import Loader from '../../components/Shared/Loader/Loader';
 import { Helmet } from 'react-helmet-async';
 
 const PackageDetails = () => {
 
-    const { user } = use(AuthContext);
+    const { user } = use(AuthContext); // correct hook usage
     const navigate = useNavigate();
+    const location = useLocation();
+    const { id } = useParams(); // get package ID from URL
 
+    const [allPackages, setAllPackages] = useState([]);
+    const [targetedPackage, setTargetedPackage] = useState(null);
     const [showModal, setShowModal] = useState(false);
+    const [bookingCount, setBookingCount] = useState(0);
 
     const { register, handleSubmit } = useForm();
 
-    const { id } = useParams();
-    const data = useLoaderData();
-    const targetedPackage = data.find(pckg => pckg._id === id);
+    useEffect(() => {
+        axios.get('https://muqaddas-server.vercel.app/packages', {
+            headers: {
+                authorization: `Bearer ${user.accessToken}`
+            }
+        })
+            .then(response => {
+                const found = response.data.find(p => p._id === id);
+                setAllPackages(response.data);
+                setTargetedPackage(found);
+                setBookingCount(found?.booking_count || 0);
+            })
+            .catch(error => {
+                console.error("Error fetching packages:", error);
+            });
+    }, [id]);
+
+    if (!targetedPackage) {
+        return <Loader></Loader>;
+    }
 
     const {
         _id,
@@ -41,8 +64,6 @@ const PackageDetails = () => {
         departure_date,
         destination
     } = targetedPackage;
-
-    const [bookingCount, setBookingCount] = useState(targetedPackage?.booking_count || 0);
 
     const handleBookNow = (data) => {
         const bookingData = {
@@ -69,9 +90,8 @@ const PackageDetails = () => {
 
                         setBookingCount(response.data.booking_count);
                         setShowModal(false);
-
                         navigate(location.state ? location.state : "/my-bookings");
-                    })
+                    });
             })
             .catch(() => toast.error('Booking failed. Try again.'));
     };
@@ -85,19 +105,19 @@ const PackageDetails = () => {
             <div className="absolute inset-0 bg-secondary opacity-75"></div>
 
             <div className='relative mx-auto max-w-5xl grid lg:grid-cols-5 gap-5'>
-                <motion.div 
-                initial={{ opacity: 0, x: -40 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                className="mx-5 lg:mx-0 grid gap-10 p-5 bg-white rounded-2xl shadow-md lg:col-span-3">
+                <motion.div
+                    initial={{ opacity: 0, x: -40 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="mx-5 lg:mx-0 grid gap-10 p-5 bg-white rounded-2xl shadow-md lg:col-span-3">
                     <div
-                        
+
                         className="flex justify-center items-center">
                         <img src={image} alt={tour_name} className="object-cover w-full rounded-2xl" />
                     </div>
 
                     <div
-                        
+
                         className="flex flex-col gap-4 justify-center">
                         <div className='pb-3 border-b-2 border-gray-400 border-dashed flex justify-between items-center'>
                             <h2 className=" text-2xl font-bold text-gray-800 ">{tour_name}</h2>
@@ -122,7 +142,7 @@ const PackageDetails = () => {
                                 <img src={guide_photo} alt={guide_name} className="w-10 h-10 rounded-full object-cover" />
                                 <div className='flex flex-col gap-1'>
                                     <span className="font-medium text-sm text-gray-600">{guide_name}</span>
-                                    <span className="font-medium text-sm text-gray-600 font-roboto">+{guide_contact_no}</span>
+                                    <span className="font-medium text-sm text-gray-600 font-roboto">{guide_contact_no}</span>
                                 </div>
                             </div>
                         </div>
@@ -136,10 +156,10 @@ const PackageDetails = () => {
                 </motion.div>
 
                 <motion.div
-                initial={{ opacity: 0, x: 40 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1 }} 
-                className='lg:col-span-2 mx-5 lg:mx-0'>
+                    initial={{ opacity: 0, x: 40 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1 }}
+                    className='lg:col-span-2 mx-5 lg:mx-0'>
                     <div className='bg-white rounded-2xl shadow-md p-5 grid gap-5 md:grid-cols-2 lg:grid-cols-none'>
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d237684.5851863394!2d39.68173388279316!3d21.43625436959531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c21b4ced818775%3A0x98ab2469cf70c9ce!2sMakkah%20Saudi%20Arabia!5e0!3m2!1sen!2sbd!4v1750093479752!5m2!1sen!2sbd"

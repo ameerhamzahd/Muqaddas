@@ -38,11 +38,9 @@ const router = createBrowserRouter(
         {
           path: "/my-bookings",
           element:
-          <PrivateRoute>
-            <MyBookings></MyBookings>
-          </PrivateRoute>,
-          loader: ({params}) => fetch(`https://muqaddas-server.vercel.app/bookings?email=${params.email}`),
-          hydrateFallbackElement: Loader
+            <PrivateRoute>
+              <MyBookings></MyBookings>
+            </PrivateRoute>
         },
         {
           path: "/about-us",
@@ -52,28 +50,26 @@ const router = createBrowserRouter(
         },
         {
           path: "/add-package",
-          element: 
-          <PrivateRoute>
-            <AddPackage></AddPackage>
-          </PrivateRoute>
+          element:
+            <PrivateRoute>
+              <AddPackage></AddPackage>
+            </PrivateRoute>
         },
         {
           path: "/manage-my-packages",
           element:
-          <PrivateRoute>
-            <ManageMyPackages></ManageMyPackages>
-          </PrivateRoute>,
-          loader: ({params}) => fetch(`https://muqaddas-server.vercel.app/packages?email=${params.email}`),
+            <PrivateRoute>
+              <ManageMyPackages></ManageMyPackages>
+            </PrivateRoute>,
+          loader: ({ params }) => fetch(`https://muqaddas-server.vercel.app/packages?email=${params.email}`),
           hydrateFallbackElement: Loader
         },
         {
           path: "/package/:id",
           element:
-          <PrivateRoute>
-            <PackageDetails></PackageDetails>
-          </PrivateRoute>,
-          loader: () => fetch("https://muqaddas-server.vercel.app/packages"),
-          hydrateFallbackElement: Loader
+            <PrivateRoute>
+              <PackageDetails></PackageDetails>
+            </PrivateRoute>,
         },
         {
           path: "/privacy-policy",

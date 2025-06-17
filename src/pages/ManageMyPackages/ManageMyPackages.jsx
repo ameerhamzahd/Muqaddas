@@ -38,7 +38,11 @@ const ManageMyPackages = () => {
     const handleUpdate = (data) => {
         const { _id, ...safeData } = data;
 
-        axios.put(`https://muqaddas-server.vercel.app/package/${selectedPackage._id}`, safeData)
+        axios.put(`https://muqaddas-server.vercel.app/package/${selectedPackage._id}`, safeData, {
+            headers: {
+                authorization: `Bearer ${user.accessToken}`
+            }
+        })
             .then(response => {
                 if (response.data.modifiedCount) {
                     Swal.fire({
@@ -74,7 +78,11 @@ const ManageMyPackages = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`https://muqaddas-server.vercel.app/package/${_id}`)
+                axios.delete(`https://muqaddas-server.vercel.app/package/${_id}`, {
+                    headers: {
+                        authorization: `Bearer ${user.accessToken}`
+                    }
+                })
                     .then(response => {
                         if (response.data.deletedCount > 0) {
                             Swal.fire("Deleted!", "Your package has been deleted.", "success");
@@ -97,7 +105,7 @@ const ManageMyPackages = () => {
             <Helmet>
                 <title>Muqaddas | Manage My Packages</title>
             </Helmet>
-            
+
             <div className="absolute inset-0 bg-secondary opacity-75"></div>
 
             <div className="relative px-5 w-full">

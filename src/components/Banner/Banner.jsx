@@ -57,12 +57,10 @@ const Banner = () => {
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                            <Link to="/all-packages">
-                                <button className="btn btn-outline text-white border-white hover:bg-white hover:text-secondary rounded-full">
+                                <Link to="/all-packages" className="btn btn-outline text-white border-white hover:bg-white hover:text-secondary rounded-full">
                                     <FaArrowRight className="mr-2" />
                                     Explore All Packages
-                                </button>
-                            </Link>
+                                </Link>
 
                             <button
                                 onClick={openModal}

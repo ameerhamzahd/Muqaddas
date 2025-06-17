@@ -95,7 +95,7 @@ const MyBookings = () => {
                                                 <td className='font-roboto'>{booking.departure_date}</td>
                                                 <td className="text-center flex flex-col gap-2">
                                                     <span>{booking.guide_name}</span>
-                                                    <span className='font-roboto'>+{booking.guide_contact_no}</span>
+                                                    <span className='font-roboto'>{booking.guide_contact_no}</span>
                                                 </td>
                                                 <td className='font-roboto italic'>"{booking.special_note}"</td>
                                                 <td className="space-y-2">

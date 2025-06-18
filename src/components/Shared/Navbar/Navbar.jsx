@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from 'react';
+import React, { use } from 'react';
 import { Link, NavLink } from 'react-router';
 import logo from "../../../assets/logo.png"
 import { AuthContext } from '../../../context/AuthContext/AuthContext';
@@ -23,18 +23,18 @@ const Navbar = () => {
         <li><NavLink to="/about-us" className={navLinkStyle}>About Us</NavLink></li>
     </>
 
-    const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
+    // const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
 
-    useEffect(() => {
-        localStorage.setItem("theme", theme);
-        const localTheme = localStorage.getItem("theme");
-        document.querySelector("html").setAttribute("data-theme", localTheme);
-    }, [theme]);
+    // useEffect(() => {
+    //     localStorage.setItem("theme", theme);
+    //     const localTheme = localStorage.getItem("theme");
+    //     document.querySelector("html").setAttribute("data-theme", localTheme);
+    // }, [theme]);
 
 
-    const handleToggleTheme = (event) => {
-        setTheme(event.target.checked ? "dark" : "light");
-    };
+    // const handleToggleTheme = (event) => {
+    //     setTheme(event.target.checked ? "dark" : "light");
+    // };
 
     const handleLogout = () => {
         logoutUser()
@@ -86,12 +86,12 @@ const Navbar = () => {
                     <div className="navbar-end">
                         {
                             user ? (<>
-                                {
+                                {/* {
                                     <input type="checkbox"
                                         onChange={handleToggleTheme}
                                         checked={theme === "dark"}
                                         className="toggle theme-controller" />
-                                }
+                                } */}
 
                                 <div className="dropdown dropdown-end relative px-2">
                                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
@@ -108,12 +108,12 @@ const Navbar = () => {
                             </>
                             ) : (
                                 <div className='flex justify-center items-center'>
-                                    {
+                                    {/* {
                                         <input type="checkbox"
                                             onChange={handleToggleTheme}
                                             checked={theme === "dark"}
                                             className="toggle theme-controller" />
-                                    }
+                                    } */}
 
                                     <div className='gap-3 justify-center items-center px-2 md:flex'>
                                         <Link to="/login" className="flex gap-2 items-center px-6 bg-transparent btn hover:border-secondary">

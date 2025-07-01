@@ -4,13 +4,6 @@ Welcome to **Muqaddas**, a full-featured web platform designed to simplify the j
 
 ---
 
-## 🌐 Live Site
-
-🔗 [Visit Muqaddas Live](https://safar-e-muqaddas.web.app)  
-📌 *Best viewed on desktop and mobile browsers*
-
----
-
 ## ✨ Key Features
 
 - 📦 View curated Hajj & Umrah packages

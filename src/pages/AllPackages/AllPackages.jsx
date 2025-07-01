@@ -5,18 +5,18 @@ import { motion } from "motion/react";
 import axios from 'axios';
 import { GiDuration } from 'react-icons/gi';
 import { MdOutlineDateRange } from 'react-icons/md';
-import { AuthContext } from '../../context/AuthContext/AuthContext';
 import { Helmet } from 'react-helmet-async';
 
 const AllPackages = () => {
-
     const initialPackages = useLoaderData();
 
     const [myPackages, setMyPackages] = useState(
         Array.isArray(initialPackages) ? initialPackages : []
     );
     const [searchTerm, setSearchTerm] = useState("");
+    const [sortPackage, setSortPackage] = useState(null);
 
+    // Debounced search
     useEffect(() => {
         const delayDebounce = setTimeout(async () => {
             const { data } = await axios.get(
@@ -28,18 +28,26 @@ const AllPackages = () => {
         return () => clearTimeout(delayDebounce);
     }, [searchTerm]);
 
+    // Derived sorted packages for display
+    const displayPackages = [...myPackages].sort((a, b) => {
+        if (sortPackage === 'Ascending') {
+            return a.price - b.price;
+        } else if (sortPackage === 'Descending') {
+            return b.price - a.price;
+        }
+        return 0; // No sorting
+    });
+
     return (
         <div>
             <Helmet>
                 <title>Muqaddas | All Packages</title>
             </Helmet>
 
-            <div
-                className="relative hero min-h-screen pt-15 md:pt-0"
-                style={{ backgroundImage: `url(https://res.cloudinary.com/dgt4ygjhp/image/upload/v1749619957/mosque11_ndiw5y.jpg)` }}
-            >
+            {/* Hero Section */}
+            <div className="relative hero min-h-screen pt-15 md:pt-0"
+                style={{ backgroundImage: `url(https://res.cloudinary.com/dgt4ygjhp/image/upload/v1749619957/mosque11_ndiw5y.jpg)` }}>
                 <div className="absolute inset-0 bg-secondary opacity-85"></div>
-
                 <motion.div
                     className="relative text-center max-w-3xl px-4"
                     initial={{ opacity: 0, y: 40 }}
@@ -50,19 +58,24 @@ const AllPackages = () => {
                         <div className="bg-primary rounded-full p-2 mr-2 text-white">
                             <TbPackages size={20} />
                         </div>
-                        <p className="text-lg font-semibold text-[#E6D8CA]">
-                            Muqaddas Packages
-                        </p>
+                        <p className="text-lg font-semibold text-[#E6D8CA]">Muqaddas Packages</p>
                     </div>
-
                     <h1 className="text-5xl font-bold leading-tight mb-4 text-[#E6D8CA]">
                         Your Curated Routes to the House of Allah
                     </h1>
-
                     <p className="text-base sm:text-lg text-[#E6D8CA] leading-relaxed">
                         Your Pilgrimage Packages, Perfectly Arranged for a Seamless and Spiritually Fulfilling Journey.
                     </p>
+                </motion.div>
+            </div>
 
+            {/* Filter, Search, Sort */}
+            <div className='max-w-5xl mx-auto py-15'>
+                <div className="space-y-4 text-center px-5 md:px-0">
+                    <h1 className="text-5xl font-bold text-secondary md:text-5xl">Sacred Steps Awaits</h1>
+                    <p className="mx-auto max-w-2xl text-xl text-primary">
+                        Begin your spiritual journey with comfort, care, and complete guidance.
+                    </p>
                     <div className="mt-6 flex justify-center">
                         <input
                             type="text"
@@ -72,27 +85,28 @@ const AllPackages = () => {
                             className="input input-bordered w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg text-secondary font-roboto"
                         />
                     </div>
-                </motion.div>
-            </div>
-
-            <div className='max-w-5xl mx-auto py-15'>
-                <div className="space-y-4 text-center px-5 md:px-0">
-                    <h1 className="text-5xl font-bold text-secondary md:text-5xl">
-                        Sacred Steps Awaits
-                    </h1>
-                    <p className="mx-auto max-w-2xl text-xl text-primary">
-                        Begin your spiritual journey with comfort, care, and complete guidance.
-                    </p>
                     <div className="flex gap-2 justify-center items-center mt-4 text-sm text-primary">
                         <span className='font-roboto'>{myPackages.length} packages available</span>
                         <span className='font-roboto'>•</span>
                         <span className='font-roboto'>Updated daily</span>
                     </div>
+                    <div>
+                        <select
+                            className="select select-primary"
+                            onChange={(event) => setSortPackage(event.target.value)}
+                            defaultValue=""
+                        >
+                            <option disabled value="">Sort by price</option>
+                            <option value="Ascending">Low to high</option>
+                            <option value="Descending">High to low</option>
+                        </select>
+                    </div>
                 </div>
 
+                {/* Packages Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-5 lg:px-0 pt-15">
-                    {myPackages.length > 0 ? (
-                        myPackages.map((pckg) => (
+                    {displayPackages.length > 0 ? (
+                        displayPackages.map((pckg) => (
                             <div key={pckg._id} className="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl group flex flex-col justify-between">
                                 <div className="h-48 overflow-hidden">
                                     <img
@@ -124,7 +138,7 @@ const AllPackages = () => {
                         ))
                     ) : (
                         <p className="col-span-full text-center text-primary text-lg py-10">
-                            {searchTerm && "No packages found matching your search."}
+                            {searchTerm ? "No packages found matching your search." : "No packages available at the moment."}
                         </p>
                     )}
                 </div>

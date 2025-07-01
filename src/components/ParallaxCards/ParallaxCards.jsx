@@ -6,8 +6,6 @@ import { GiDuration } from 'react-icons/gi';
 import { MdOutlineDateRange } from 'react-icons/md';
 import { Link } from 'react-router';
 
-
-
 const ParallaxCards = ({ packages }) => {
 
     return (

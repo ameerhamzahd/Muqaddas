@@ -18,6 +18,9 @@ const Navbar = () => {
         <li><NavLink to="/" className={navLinkStyle}>Home</NavLink></li>
         <li><NavLink to="/all-packages" className={navLinkStyle}>All Packages</NavLink></li>
         {
+            user && <li><NavLink to="/add-package" className={navLinkStyle}>Add Package</NavLink></li>
+        }
+        {
             user && <li><NavLink to="/my-bookings" className={navLinkStyle}>My Bookings</NavLink></li>
         }
         <li><NavLink to="/about-us" className={navLinkStyle}>About Us</NavLink></li>
@@ -100,7 +103,6 @@ const Navbar = () => {
                                         </div>
                                     </label>
                                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[60] p-2 shadow bg-white rounded-box w-52 text-secondary gap-2">
-                                        <li><NavLink to="/add-package" className={navLinkStyle}>Add Package</NavLink></li>
                                         <li><NavLink to="/manage-my-packages" className={navLinkStyle}>Manage My Packages</NavLink></li>
                                         <li><Link onClick={handleLogout} className='flex items-center justify-center gap-1 border border-secondary text-black'><TbLogout2 size={20} />Logout</Link></li>
                                     </ul>

@@ -90,6 +90,8 @@ const ArticleANDBlog = () => {
                     </p>
                     <h2 className="text-5xl font-bold text-secondary">Article & Blog</h2>
                 </div>
+
+                {/* Dynamically inheriting Articles & Blogs */}
                 <Carousel
                     infinite
                     arrows

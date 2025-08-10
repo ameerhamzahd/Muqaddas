@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router';
 import logo from "../../../assets/logo.png"
 import { AuthContext } from '../../../context/AuthContext/AuthContext';
@@ -89,12 +89,12 @@ const Navbar = () => {
                     <div className="navbar-end">
                         {
                             user ? (<>
-                                {/* {
+                                {
                                     <input type="checkbox"
                                         onChange={handleToggleTheme}
                                         checked={theme === "dark"}
                                         className="toggle theme-controller" />
-                                } */}
+                                }
 
                                 <div className="dropdown dropdown-end relative px-2">
                                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
@@ -110,12 +110,12 @@ const Navbar = () => {
                             </>
                             ) : (
                                 <div className='flex justify-center items-center'>
-                                    {/* {
+                                    {
                                         <input type="checkbox"
                                             onChange={handleToggleTheme}
                                             checked={theme === "dark"}
                                             className="toggle theme-controller" />
-                                    } */}
+                                    }
 
                                     <div className='gap-3 justify-center items-center px-2 md:flex'>
                                         <Link to="/login" className="flex gap-2 items-center px-6 bg-transparent btn hover:border-secondary">

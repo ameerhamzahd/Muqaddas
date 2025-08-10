@@ -92,7 +92,7 @@ const AllPackages = () => {
                     </div>
                     <div>
                         <select
-                            className="select select-primary"
+                            className="select select-primary text-secondary"
                             onChange={(event) => setSortPackage(event.target.value)}
                             defaultValue=""
                         >

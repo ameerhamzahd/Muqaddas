@@ -26,18 +26,18 @@ const Navbar = () => {
         <li><NavLink to="/about-us" className={navLinkStyle}>About Us</NavLink></li>
     </>
 
-    // const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
+    const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
 
-    // useEffect(() => {
-    //     localStorage.setItem("theme", theme);
-    //     const localTheme = localStorage.getItem("theme");
-    //     document.querySelector("html").setAttribute("data-theme", localTheme);
-    // }, [theme]);
+    useEffect(() => {
+        localStorage.setItem("theme", theme);
+        const localTheme = localStorage.getItem("theme");
+        document.querySelector("html").setAttribute("data-theme", localTheme);
+    }, [theme]);
 
 
-    // const handleToggleTheme = (event) => {
-    //     setTheme(event.target.checked ? "dark" : "light");
-    // };
+    const handleToggleTheme = (event) => {
+        setTheme(event.target.checked ? "dark" : "light");
+    };
 
     const handleLogout = () => {
         logoutUser()

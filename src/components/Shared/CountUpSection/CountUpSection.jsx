@@ -20,6 +20,8 @@ const CountUpSection = () => {
     return (
         <div>
             <div className="bg-[#E6D8CA] py-15">
+
+                {/* React Countup */}
                 <div className="max-w-5xl mx-auto grid md:grid-cols-4 items-center gap-4">
                     {
                         stats.map((stat, index) => (

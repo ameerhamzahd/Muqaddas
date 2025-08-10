@@ -132,6 +132,7 @@ const Register = () => {
 
             <div className="absolute inset-0 bg-secondary opacity-75"></div>
 
+            {/* Registration Form */}
             <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}

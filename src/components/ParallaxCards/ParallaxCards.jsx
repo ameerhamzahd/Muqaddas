@@ -30,6 +30,7 @@ const ParallaxCards = ({ packages }) => {
                     Meticulously Crafted Pilgrimage Experiences Await.
                     </p>
 
+                    {/* Dynamically integrating packages from backend */}
                     <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
                         {packages.map((pckg, index) => (
                             <motion.div
